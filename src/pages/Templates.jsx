@@ -120,8 +120,8 @@ export default function Templates() {
       <div className="card divide-y divide-line">
         {list.length === 0 && <Empty icon={FileText} title="No templates yet">Add the starter templates, generate one with AI, or write your own with variables such as {'{{name}}'}.</Empty>}
         {list.map((t) => (
-          <div key={t.id} className="flex items-center gap-4 px-5 py-4">
-            <div className="h-10 w-10 shrink-0 rounded-xl bg-primary-soft text-primary grid place-items-center"><FileText className="h-5 w-5" /></div>
+          <div key={t.id} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-5 py-4">
+            <div className="hidden sm:grid h-10 w-10 shrink-0 rounded-xl bg-primary-soft text-primary place-items-center"><FileText className="h-5 w-5" /></div>
             <div className="min-w-0 flex-1">
               <p className="font-medium truncate">{t.name}</p>
               <p className="text-xs text-muted truncate">{t.subject}</p>

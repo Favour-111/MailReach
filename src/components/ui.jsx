@@ -59,7 +59,7 @@ export function Modal({ title, subtitle, onClose, children, wide, dismissible = 
   }, [onClose, dismissible]);
   return (
     <div className="fixed inset-0 z-50 grid place-items-center p-4 bg-black/45" onMouseDown={(e) => e.target === e.currentTarget && dismissible && onClose?.()}>
-      <div role="dialog" aria-modal="true" className={`card shadow-pop w-full ${wide ? 'max-w-2xl' : 'max-w-md'} max-h-[90vh] overflow-y-auto p-6`}>
+      <div role="dialog" aria-modal="true" className={`card shadow-pop w-full ${wide ? 'max-w-2xl' : 'max-w-md'} max-h-[90vh] max-h-[90dvh] overflow-y-auto p-4 sm:p-6`}>
         <div className="flex items-start justify-between gap-4 mb-4">
           <div>
             <h2 className="text-lg">{title}</h2>
@@ -131,11 +131,11 @@ export function ToastProvider({ children }) {
   return (
     <ToastCtx.Provider value={push}>
       {children}
-      <div className="fixed bottom-4 right-4 z-[60] flex flex-col gap-2">
+      <div className="fixed bottom-4 inset-x-4 sm:inset-x-auto sm:right-4 z-[60] flex flex-col gap-2 items-stretch sm:items-end">
         {toasts.map((t) => (
-          <div key={t.id} className="card shadow-pop flex items-center gap-2.5 px-4 py-3 max-w-sm">
+          <div key={t.id} className="card shadow-pop flex items-center gap-2.5 px-4 py-3 w-full sm:w-auto sm:max-w-sm">
             {t.type === 'error' ? <AlertCircle className="h-4 w-4 text-danger shrink-0" /> : <CheckCircle2 className="h-4 w-4 text-ok shrink-0" />}
-            <span>{t.message}</span>
+            <span className="min-w-0 break-words">{t.message}</span>
           </div>
         ))}
       </div>

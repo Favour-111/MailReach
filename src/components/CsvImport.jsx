@@ -80,7 +80,7 @@ export default function CsvImport({ onImport, onClose }) {
       ) : (
         <div className="space-y-4">
           <div className="flex items-center gap-2 text-muted"><FileSpreadsheet className="h-4 w-4" />{file.name} · {parsed.rows.length} rows</div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {FIELDS.map((f) => (
               <div key={f.key}>
                 <label className="label">{f.label} column{f.key === 'email' && ' *'}</label>

@@ -81,14 +81,14 @@ export function CampaignDetail() {
         )}
       </PageHeader>
 
-      <div className="grid grid-cols-3 gap-4 mb-5">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-5">
         {[['Total', c.totalRecipients, ''], ['Successful', c.successfulCount, 'text-ok'], ['Failed', c.failedCount, c.failedCount ? 'text-danger' : '']].map(([l, v, cls]) => (
-          <div key={l} className="card p-4"><p className="text-xs text-muted">{l}</p><p className={`text-2xl font-semibold ${cls}`}>{v}</p></div>
+          <div key={l} className="card p-3 sm:p-4 min-w-0"><p className="text-xs text-muted">{l}</p><p className={`text-2xl font-semibold ${cls}`}>{v}</p></div>
         ))}
       </div>
 
       <div className="card overflow-hidden">
-        <div className="flex gap-1 p-3 border-b border-line">
+        <div className="flex gap-1 p-3 border-b border-line overflow-x-auto">
           {['all', 'sent', 'failed', 'pending'].map((f) => (
             <button key={f} onClick={() => setFilter(f)} className={`rounded-lg px-3 py-1.5 text-xs font-medium capitalize ${filter === f ? 'bg-primary-soft text-primary' : 'text-muted hover:bg-subtle'}`}>{f}</button>
           ))}

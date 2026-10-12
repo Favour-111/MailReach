@@ -30,7 +30,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen grid place-items-center p-4">
+    <div className="min-h-dvh grid place-items-center p-4">
       <div className="w-full max-w-sm">
         <div className="flex justify-center mb-6 scale-125"><Logo /></div>
         <form onSubmit={submit} className="card p-6 space-y-4">

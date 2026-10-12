@@ -60,7 +60,7 @@ export default function Layout() {
   const [open, setOpen] = useState(false);
   useLocation();
   return (
-    <div className="min-h-screen lg:flex">
+    <div className="min-h-dvh lg:flex">
       <aside className="hidden lg:block w-60 shrink-0 border-r border-line bg-surface sticky top-0 h-screen">
         <Sidebar />
       </aside>
@@ -71,7 +71,7 @@ export default function Layout() {
       </header>
       {open && (
         <div className="lg:hidden fixed inset-0 z-40 bg-black/45" onClick={() => setOpen(false)}>
-          <aside className="w-64 h-full bg-surface" onClick={(e) => e.stopPropagation()}>
+          <aside className="w-64 max-w-[85vw] h-full bg-surface" onClick={(e) => e.stopPropagation()}>
             <Sidebar onNavigate={() => setOpen(false)} />
           </aside>
         </div>

@@ -26,8 +26,8 @@ export default function Drafts() {
       <div className="card divide-y divide-line">
         {drafts.length === 0 && <Empty icon={FilePen} title="No drafts">Use “Save Draft” while composing to keep your work.</Empty>}
         {drafts.map((d) => (
-          <div key={d.id} className="flex items-center gap-4 px-5 py-4">
-            <div className="h-10 w-10 shrink-0 rounded-xl bg-primary-soft text-primary grid place-items-center"><FilePen className="h-5 w-5" /></div>
+          <div key={d.id} className="flex items-center gap-3 sm:gap-4 px-3 sm:px-5 py-4">
+            <div className="hidden sm:grid h-10 w-10 shrink-0 rounded-xl bg-primary-soft text-primary place-items-center"><FilePen className="h-5 w-5" /></div>
             <div className="min-w-0 flex-1">
               <p className="font-medium truncate">{d.subject || 'Untitled draft'}</p>
               <p className="text-xs text-muted flex flex-wrap gap-x-3">

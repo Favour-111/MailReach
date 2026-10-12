@@ -30,7 +30,7 @@ export default function Dashboard() {
         <button className="btn-primary" onClick={() => { reset(); nav('/compose'); }}><Plus className="h-4 w-4" /> Compose Email</button>
       </PageHeader>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 min-[440px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {tiles.map((t) => (
           <div key={t.label} className="card p-4 flex items-center gap-3">
             <IconTile icon={t.icon} tone={t.tone} />
