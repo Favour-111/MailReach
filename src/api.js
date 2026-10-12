@@ -1,6 +1,8 @@
+const API_BASE = (import.meta.env.VITE_API_BASE || '/api').replace(/\/$/, '');
+
 async function request(method, url, body) {
   const isForm = body instanceof FormData;
-  const res = await fetch(`/api${url}`, {
+  const res = await fetch(`${API_BASE}${url}`, {
     method,
     headers: body && !isForm ? { 'Content-Type': 'application/json' } : undefined,
     body: body ? (isForm ? body : JSON.stringify(body)) : undefined,
